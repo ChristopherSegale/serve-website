@@ -1,0 +1,115 @@
+body {
+    background-color: lightblue;
+}
+
+nav li {
+    background-color: lightgrey;
+}
+
+main {
+    background-color: lightgrey;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .collapsible {
+	display: flex;
+    }
+    .center button {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+    }
+    .mobile {
+	display: block;
+    }
+    .desktop {
+	display: none;
+    }
+    nav {
+	display: none;
+	width: 100%;
+    }
+    h1 {
+	font-size: x-large;
+    }
+    nav li {
+	border-radius: 2em;
+	list-style-type: none;
+	margin: 0.3em;
+	padding: 0.4em;
+	margin-left: -2.2em;
+    }
+    main {
+	font-size: large;
+	margin-left: auto;
+	margin-right: auto;
+    }
+
+    main p, ul, ol, div {
+	margin-right: auto;
+	margin-left: auto;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    h1 {
+	font-size: xx-large;
+    }
+
+    .center {
+	justify-content: center;
+	align-items: center;
+	text-align: center
+    }
+
+    .collapsible {
+	display: none;
+    }
+
+    .mobile {
+	display: none;
+    }
+
+    nav {
+	display: block;
+    }
+
+    nav li {
+	border-radius: 2em;
+	list-style-type: none;
+	margin: 0.3em;
+	padding: 0.4em;
+    }
+
+    nav li a {
+	text-decoration: none;
+    }
+
+    main {
+	border-radius: 1em;
+	width: 80%;
+	font-size: x-large;
+	margin-left: auto;
+	margin-right: auto;
+    }
+
+    main p, ul, ol, div {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+    }
+}

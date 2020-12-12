@@ -1,0 +1,55 @@
+#| Web Pages
+   The first argument are the key arguments for define-handler enclosed in a list.
+   Text in quotation marks are wrapped in paragraph tags.
+   Lists with the first element :ordered create an ordered list.
+   Lists with the first element :project calls the print-project function.
+   Lists which just have quoted text create an unordered list.
+
+   In order for the navigation bar to print properly the key arguments for
+   defining a web page must be entered as follows:
+   :handler-name handler-name
+   :uri "/uri-example"
+   :meta-title "Web Page Name"
+   :Title "The title that is printed on the webpage itself."
+
+   This file is only used while the program is being compiled.
+   This file is not a dependency for the deliverable once it has been compiled.
+|#
+
+;;; Home Page
+((:handler-name home-page
+  :uri "/"
+  :meta-title "Serve Website"
+  :title "Serve Website")
+  "Here is an example of how a website can be written using Serve Website.  Here are some reasons for why you would want to use Serve Website to build a website."
+  (:ordered
+    "Navigation bar is created automatically as the program is compiled."
+    "Not having to deal with HTML markup when designing your website outside of source code."
+    "Website is compiled into an executable as opposed to multiple script files dependent on another program to run.")
+  ("Here is an unordered list"
+   "It is made by using a list of strings"))
+
+((:handler-name projects
+  :uri "/projects"
+  :meta-title "Projects"
+  :title "Projects")
+  "Projects are a good way of displaying projects you have been a part of."
+  (:project
+    "Foo" ;Project Name
+    "Bar" ;Language project is written in
+    "https://fakerepository.com/baz"
+    nil ;If using images, have this line be a list of two image file paths.  Example: ("/image/path/desktop" "/image/path/mobile")
+    "This line is used to describe the project."
+    "This line is used to describe how you contributed to the project."))
+    
+
+((:handler-name contact
+  :uri "/contact"
+  :meta-title "Contact Information"
+  :title "Contact Information")
+  "Here is how contact information can be given."
+  (:contact :phone
+    "111-111-1111")
+  (:contact :email
+    "notreal@fake.org")
+  "Phone contacts will list the phone number in a desktop viewport and as a hyperlink in a mobile viewport.")
