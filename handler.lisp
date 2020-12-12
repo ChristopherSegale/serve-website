@@ -1,0 +1,15 @@
+(in-package :serve-website)
+
+(defmacro define-handler (nav-list (&key handler-name uri meta-title title) &rest content)
+  (if (or (null handler-name) (null uri))
+      (error "handler-name and uri needs to be defined.")
+      `(hunchentoot:define-easy-handler (,handler-name :uri ,uri) ()
+	 (setf (hunchentoot:content-type*) "text/html")
+	 ,(print-website nav-list meta-title title content))))
+
+(defmacro start-webserver (file-name)
+  (destructuring-bind (wp nav) (create-webpages file-name)
+    `(with-webserver ()
+       ,@(mapcar #'(lambda (w)
+		     `(define-handler ,nav ,@w))
+		 wp))))
