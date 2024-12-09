@@ -4,6 +4,7 @@
   :depends-on (:bordeaux-threads
                :hunchentoot
                :cl-who)
+  :serial t
   :components ((:file "package")
 	       (:file "util-fun")
 	       (:file "util-mac")
